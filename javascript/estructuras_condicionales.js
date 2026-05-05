@@ -24,7 +24,7 @@ if(nota>=9 && edad<=10){
 let formaPago="efectivo";
 switch(formaPago){
     case "efectivo":
-        console.log("tu forma de Pago es en efectivo");
+        console.log("tu forma de Pago es en efectivo ");
         break;
     case "tarjeta":
         console.log("tu forma de Pago es con tarjeta de crédito");

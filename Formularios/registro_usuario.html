@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>REGISTROS USUARIOS</title>
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+</head>
+<header>
+	<h2>
+	<center>Suscripción a la revista "Desarrolladores Informaticos"</center>
+</h2>
+	<nav>
+		<div class="nav-container">
+            <ul class="nav-links">
+			<li><a href="#Inicio">Inicio</a></li>
+			<li><a href="#registro_usuario">Registro de Usuarios</a></li>
+			<li><a href="#contacto">Contacto</a></li>
+			<li><a href="#acerca_de">Acerca de</a></li>
+		</ul>
+		</div>
+	</nav>
+</header>
+<body bgcolor="74AFEA">
+<main>
+	<p>Bienvenido a la pagina de registro de usuarios de Desarrolladores Informáticos, aqui		 podras registrarte para participar en los foros del sitio y obtener beneficios 
+exclusivos	 para miembros registrados</p>
+
+
+<section class="registro">
+	<form action="registro_usuario.html" method="post"></form>
+	<center><img src="img/usuarios.jpg" width="155" height="155"></center>
+	<h4>Completa la siguiente informacion para registrarte en Desarrolladores GT.com, el registro es para facilitar tu participacion en los foros del sitio y los beneficios que obtendras al ser miembro de esta gran familia</h4>
+	<fieldset>
+		<legend><b>CUENTA DE USUARIO</legend>
+			<label for="usuario">Usuario</label>
+		<input type="text" name="user" maxlength="10" autofocus="on" required><br/>
+		<label for="pass">contraseña:</label>
+		<input type="password" name="pass" maxlength="8" required><br/>
+        <label for="repepass">Repetir contraseña:</label>
+		<input type="password" name="pass" maxlength="8" required><br/>
+</fieldset>
+<br>
+</section>
+<section class="informacion">
+<fieldset>
+	<legend><b>INFORMACION PERSONAL CONTACTO</legend>
+		<label for="nombre">Nombre:</label>
+		<input type="text" name="nombre" maxlength="12" required placeholder="Nombre" autocomplete="on">
+		<br/><!--Type="text", son cajas de texto-->
+		<label for="apellido">Apellido:</label>
+		<input type="text" name="apellido" maxlength="12" required placeholder="Apellido" autocomplete="on">
+		<br/>
+		<label for="foto">Fotografia:</label>
+		<input type="file" name="foto">
+		<label for="genero">Genero:</label>
+		<input type="radio" name="genero" value="masculino" checked="checked">Masculino
+        <input type="radio" name="genero" value="femenino" checked="checked">Femenino
+		<br/>
+		<label for="edad">Edad:</label>
+		<input type="number" min="18" max="88" required>
+		<br/>
+		<label for="fecha">Fecha de cumpleaños:</label>
+		<input type="date" name="cumple">
+		<br/>
+		<label for="nivel">Nivel de Escolaridad:</label>
+		<input list="nivel" required>
+		<datalist id="nivel">
+			<option value='BAchiller'></option>
+			<option value='Tecnico'></option>
+			<option value='Licenciado'></option>
+			<option value='Ingeniero'></option>
+			<option value='Estudiante de Educacion Superior'></option>
+		</datalist>
+		<br/>
+		<label for="pais"> País:El Salvador</label></br>
+		<label for="depa">Departamento</label>
+		<input list="departamento" required>
+		<datalist id="departamento">
+			<option value='Ahuachapan'>Ahuachapán</option>
+			<option value='San Salvador'>San Salvador</option>
+			<option value='La Libertad'>La Libertad</option>
+			<option value='Santa Ana'>Santa Ana</option>
+			<option value='San Miguel'>San Miguel</option>
+            <option value='Chalatenago'>Chalatenango</option>
+			<option value='Cuscatlan'>Cuscatlán</option>
+			<option value='San Vicente'>San Vicente</option>
+			<option value='Usulutan'>Usulutan</option>
+			<option value='Morazan'>Morazan</option>
+			<option value='Cabañas'>Cabañas</option>
+			<option value='La union'>La Union</option>
+			<option value='Sonsonate'>Sonsonate</option>
+			<option value='La Paz'>La Paz</option>
+		</datalist>
+	</br>
+	<label for="dir">Direccion</label><br>
+	<textarea name="dire" cols="50" rows="5" placeholder="Escribe tu Direccion" required></textarea>
+	</br>
+	<label for="tel">Telefono Movil:</label>
+	<input type="text" name="codigo" pattern="\d{4}[\-]\d{4}" title="ingrese el siguiente formato 0000-0000" placeholder="0000-0000">
+	</br>
+	<label for="tel">Telefono Fijo:</label>
+	<input type="text" name="codigo" pattern="\d{4}[\-]\d{4}" title="ingrese el siguiente formato 0000-0000" placeholder="0000-0000">
+	</br>
+	<label for="color">Color favorito:</label>
+	<input type="color" name="color">
+	</br>
+	<label for="url">Blog Personal</label>
+	<input type="url" name="sitioweb" placeholder="Digitar una URL">
+</fieldset>
+</br>
+</section>
+<section class="suscripcion">
+<fieldset>
+	<legend><b>TIPO DE SUSCRIPCION A LA REVISTA</legend>
+		<label for="tipo">Tipo de suscripcion</label>
+		<input list="tipos" required/>
+		<datalist id="tipos">
+			<option value='Mensual'>Mensual</option>
+			<option value='Trimestral'>Trimestral</option>
+			<option value='Semestral'>Semestral</option>
+			<option value='Anual'>Anual</option>
+		</datalist>
+	</br>
+	<label for="fechasus">Fecha y hora de Suscripcion</label>
+	<input type="datetime-local" name="reunion" required>	
+</fieldset>
+</section>
+</br>
+<section class="intereses">
+<fieldset>
+	<legend><b>INTERESES PERSONALES</legend>
+		<input type="checkbox" name="tv" checked="checked"/>Television<br><!--Type="checkbox", se puede seleccionar mas de una opcion-->
+			<input type="checkbox" name="cine"/>Cine<br/>
+			<input type="checkbox" name="info"/>Informatica<br/>
+			<input type="checkbox" name="deportes"/>Deportes<br/>
+			<input type="checkbox" name="musica"/>Musica<br/>
+</fieldset>
+<h3>INFORMACION INDISPENSABLE</h3>
+<fieldset>
+	<legend><B>LENGUAJES DE PROGRAMACION</B></legend>
+	    <input type="checkbox" name="vb"/>Visual Basic<br/>
+		<input type="checkbox" name="csharp"/>C#<br/>
+		<input type="checkbox" name="java"/>JAVA<br/>
+		<input type="checkbox" name="php"/>PHP<br/>
+		<input type="checkbox" name="js"/>JavaScript<br/>
+		<!--Type="checkbox", se puede seleccionar mas de una opcion-->
+		<input type="checkbox" name="asp"/>ASP<br/>
+        <br/>
+		</fieldset>
+		<fieldset>
+		<legend><B>GESTORES DE BASES DE DATOS</B></legend>
+		<input type="checkbox" name="sql"/>SQL SERVER<br/>
+		<input type="checkbox" name="mysql"/>MYSQL<br/>
+		<input type="checkbox" name="oracle"/>ORACLE<br/>
+		<input type="checkbox" name="access"/>Access<br/>
+		</fieldset>
+		<br/>
+</section>
+<fieldset>
+<legend><B>SUGERENCIAS Y COMENTARIOS</B></legend>
+<label for="dir">Escribe tus comentarios:</label><br>
+<textarea name=come cols="50" rows="5" placeholder="Escribe un comentario" autocomplete="on"></textarea>
+<br>
+<label for="dir">Evaluacion cualitativa</label><br>
+<input type="range" name="nota" min="0" max="10">
+</fieldset>
+<input type="submit" value="Enviar"/>
+
+<input type="reset" value="Cancelar"/>
+</form>
+</main>
+<footer>
+	<p>&copy; 2023 Desarrolladores Informaticos. Todos los derechos reservados.</p>
+</footer>
+</body>
+</html>
