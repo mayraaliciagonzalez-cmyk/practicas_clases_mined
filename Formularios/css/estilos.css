@@ -103,6 +103,7 @@ header::before {
 header h2 {
     font-size: clamp(1.4rem, 4vw, 2.2rem);
     font-weight: 700;
+    text-align: center;
     color: var(--clr-text-bright);
     letter-spacing: -.5px;
     position: relative;
@@ -194,7 +195,13 @@ section.registro       { animation-delay: .05s; }
 section.informacion    { animation-delay: .10s; }
 section.suscripcion    { animation-delay: .15s; }
 section.intereses      { animation-delay: .20s; }
-
+img{
+    display: block;
+    margin: 0 auto var(--gap-md);
+    border-radius: 10px;
+    max-width: 100%;
+    text-align: center ;
+}   
 /* Fieldset global */
 fieldset {
     border: 1px solid var(--clr-border);
