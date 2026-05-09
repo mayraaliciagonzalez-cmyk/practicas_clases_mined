@@ -30,11 +30,13 @@ figure img{
     font-style: italic;
     &:hover{
         color: #58d31e;
+    }
+    &::after{
+    content: "🍳🥞";
     }   
 }
-&::before{
-    content: "🥞🥞";
-    }
+
+
 /*.title:hover{
     color: #58d31e;
 }*/
@@ -71,7 +73,7 @@ figure img{
     line-height: 1.6;
 }
 /*alterando los elemensot de la lista*/
-ol il::marker{
+ol li::marker{
     color: #844631;
     font-weight: bold;
 }
