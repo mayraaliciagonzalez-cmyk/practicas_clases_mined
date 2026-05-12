@@ -1,0 +1,46 @@
+.box{
+    background-color: blueviolet;
+    width: 200px;
+    height: 200px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.flexbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap:1rem;
+}
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+}
+.flex-container .box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /** USO GRID */
+  .gridbox{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    gap: .5rem;
+  }
+
+  .grid-container{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+  }
+
+.grid-container .box_c{
+    
+    grid-area: 3 / 4 /4 / 7;
+/** primer elemento (3) equiale a la fila donde inicia
+segundo elemento (4) equivale a la columna donde inicia
+tercer elemento (4) equivale a la fila donde termina (siempre se toman un numero mas 
+porque termina en la columna 6)
+cuarto elemento (7) equivale a la columna donde termina (siempre se toman un numero mas) */
+    width: 100%;
+    }  
