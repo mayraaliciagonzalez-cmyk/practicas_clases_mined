@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>DOM</title>
+    <body>
+        <h1 id="titulo">Introducción al DOM con javascript</h1>
+        <button onclick="Enviar_Confetti()">Dale Click</button>
+        <!--el onsubmit hace una recarga a la pagina cuando se da submit-->
+        <form action="" onsubmit="envioDatos()">
+            <input type="text" placeholder="Ingrese su nombre" id="nombre" class="entrada_titulo">
+            <input type="number" placeholder="ingrese su edad" id="edad"   class="entrada_titulo">
+        <button type="submit">alerta</button>
+        <button type="button" onclick="envioDatos()">Enviar Datos  </button>
+        </form>
+        <section id="contenedor_dinamico">
+
+        </section>
+    </body>
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@hiseb/confetti@2.1.0/dist/confetti.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</html>
