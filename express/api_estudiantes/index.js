@@ -56,14 +56,20 @@ app.get('/estudiantes/:estudianteId',(req, res)=>{
     res.status(200).json(encontrar_estudiante)
 })
 
+
 //ruta para crear un nuevo estudiante
 app.post('/estudiantes',(req, res)=>{
     //codigo
-    const { nombre, edad, correo } = req.body //obtenemos los datos del cuerpo de la solicitud
-    const nuevoEstudiante = { id: estudiantes.length + 1, nombre, edad, correo } //creamos un nuevo estudiante
-    estudiantes.push(nuevoEstudiante) //agregamos el nuevo estudiante al arreglo
-    res.status(201).json(nuevoEstudiante) //devolvemos el nuevo estudiante con un código de estado 201 (creado)
-})
+    const { nombre, edad, correo } = req.body 
+    //agregamos los datos del nuevo estudiante al arreglo de estudiantes
+    const nuevoEstudiante = { id: estudiantes.length + 1, nombre, edad, correo } 
+    //agregamos el nuevo estudiante al arreglo de estudiantes
+    estudiantes.push(nuevoEstudiante)
+    res.status(201).json({
+        message: "Registrado exitosamente",
+        estudiante: nuevoEstudiante
+    })
+});
 
 //ruta para actualizar un estudiante(correo)
 app.put('/estudiantes/:id',(req, res)=>{
@@ -79,24 +85,28 @@ app.put('/estudiantes/:id',(req, res)=>{
     } else {
         res.status(404).json({ message: "Estudiante no encontrado" })
     }
-})
-
+});
 
 // ruta para modificar totalmente un estudiante (PATCH)
-    app.patch('/estudiantes/:id', (req, res) => {
-  const { id } = req.params;
-  const cambios = req.body; // Lo que el cliente quiere cambiar
+app.patch('/estudiantes/:id',(req, res) => {
+    
+//primero encontrar al estudiante a actualizar
+    const id = Number(req.params.estudianteId);
+    const encontrar_estudiante = estudiantes.find(estudiante => estudiante.id === id);
 
-  const usuarioIndex = usuarios.findIndex(u => u.id === parseInt(id));
+    //validar si el estudiante No existe
+    if (!encontrar_estudiante) {
+        return res.status(404).json({ error: "Estudiante no encontrado" })
+    }
+    //segudo si el estudiante existe actualizamos su correo
+     const {nuevo_correo} = req.body 
+    encontrar_estudiante.correo = nuevo_correo
+    res.status(200).json({
+        message:'correo actualizado exitosamente',
+        estudiante: encontrar_estudiante
+    })
+})
 
-  if (usuarioIndex !== -1) {
-    // Sobrescribe solo las propiedades enviadas por el cliente
-    usuarios[usuarioIndex] = { ...usuarios[usuarioIndex], ...cambios };
-    res.json({ mensaje: "Usuario actualizado", usuario: usuarios[usuarioIndex] });
-  } else {
-    res.status(404).json({ error: "Usuario no encontrado" });
-  }
-});
 
 
 
