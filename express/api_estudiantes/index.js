@@ -12,7 +12,8 @@ app.use(express.json());
 const estudiantes = [
     { id: 1, nombre: "Ana García", edad: 18, correo: "ana.garcia@email.com" },
     { id: 2, nombre: "Carlos López", edad: 17, correo: "carlos.lopez@email.com" },
-    { id: 3, nombre: "María Pérez", edad: 18, correo: "maria.p@email.com" }
+    { id: 3, nombre: "María Pérez", edad: 18, correo: "maria.p@email.com"},
+    { id: 4, nombre: "Juan Rodríguez", edad: 19, correo: "juan.rodriguez@email.com"}
 ]
 
 //por defecto el puerto de express es el 3000
@@ -46,9 +47,9 @@ app.get('/estudiantes',(req, res)=>{
  //devolvemos el estudiante con el método find() la ruta lleva parametro(:) 
 app.get('/estudiantes/:estudianteId',(req, res)=>{
     //capturando el valor del parametro
-    
     const id = Number(req.params.estudianteId);
-    const estudiante = estudiantes.find(estudiante => estudiante.id === id);
+
+    const encontrar_estudiante = estudiantes.find(estudiante => estudiante.id === id);
     //validar si el estudiante No existe
     if (!encontrar_estudiante) {
         return res.status(404).json({ error: "Estudiante no encontrado" })
@@ -88,8 +89,8 @@ app.put('/estudiantes/:id',(req, res)=>{
 });
 
 // ruta para modificar totalmente un estudiante (PATCH)
-app.patch('/estudiantes/:id',(req, res) => {
-    
+app.patch('/estudiantes/:estudianteId',(req, res) => {
+
 //primero encontrar al estudiante a actualizar
     const id = Number(req.params.estudianteId);
     const encontrar_estudiante = estudiantes.find(estudiante => estudiante.id === id);
@@ -113,7 +114,8 @@ app.patch('/estudiantes/:id',(req, res) => {
 // ruta para eliminar un estudiante
 app.delete('/estudiantes/:id',(req, res)=>{
     //codigo
-    const id = parseInt(req.params.id) //obtenemos el id de la ruta y lo convertimos a numero
+    const id = parseInt(req.params.id) 
+    //obtenemos el id de la ruta y lo convertimos a numero
     const estudiante = estudiantes.find(est => est.id === id) //buscamos el estudiante por su id
     if (estudiante) {
         estudiantes.splice(estudiantes.indexOf(estudiante), 1) //eliminamos el estudiante del arreglo
