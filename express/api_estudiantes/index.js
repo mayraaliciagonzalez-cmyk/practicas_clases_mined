@@ -72,7 +72,7 @@ app.post('/estudiantes',(req, res)=>{
     })
 });
 
-//ruta para actualizar un estudiante(correo)
+//ruta para actualizar un estudiante
 app.put('/estudiantes/:id',(req, res)=>{
     //codigo
     const id = parseInt(req.params.id) //obtenemos el id de la ruta y lo convertimos a numero
@@ -88,7 +88,7 @@ app.put('/estudiantes/:id',(req, res)=>{
     }
 });
 
-// ruta para modificar totalmente un estudiante (PATCH)
+// ruta para modificar  el correo de un estudiante (PATCH)
 app.patch('/estudiantes/:estudianteId',(req, res) => {
 
 //primero encontrar al estudiante a actualizar
